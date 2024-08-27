@@ -1,0 +1,23 @@
+class Coche:
+    def __init__(self, marca, modelo):
+        # Estos atributos son públicos
+        self.marca = marca
+        self.modelo = modelo
+
+    def mostrar_informacion(self):
+        print(f"Marca: {self.marca}, Modelo: {self.modelo}")
+
+# Crear un objeto de la clase Coche
+mi_coche = Coche("Toyota", "Corolla")
+
+# Acceder a los atributos públicos desde fuera de la clase
+print(mi_coche.marca)   # Salida: Toyota
+print(mi_coche.modelo)  # Salida: Corolla
+
+# Modificar los atributos públicos desde fuera de la clase
+mi_coche.marca = "Honda"
+mi_coche.modelo = "Civic"
+
+# Mostrar la información actualizada
+mi_coche.mostrar_informacion()  # Salida: Marca: Honda, Modelo: Civic
+

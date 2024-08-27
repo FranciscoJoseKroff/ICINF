@@ -1,0 +1,31 @@
+class Coche:
+    def __init__(self, marca, modelo):
+        # Estos atributos son privados
+        self.__marca = marca
+        self.__modelo = modelo
+
+    def mostrar_informacion(self):
+        print(f"Marca: {self.__marca}, Modelo: {self.__modelo}")
+
+    def cambiar_marca(self, nueva_marca):
+        self.__marca = nueva_marca
+
+    def cambiar_modelo(self, nuevo_modelo):
+        self.__modelo = nuevo_modelo
+
+# Crear un objeto de la clase Coche
+mi_coche = Coche("Toyota", "Corolla")
+
+# Intentar acceder directamente a los atributos privados (esto no es posible)
+# print(mi_coche.__marca)   # Esto dará un error: AttributeError
+# print(mi_coche.__modelo)  # Esto dará un error: AttributeError
+
+# Acceder a los atributos privados mediante métodos públicos
+mi_coche.mostrar_informacion()  # Salida: Marca: Toyota, Modelo: Corolla
+
+# Cambiar los atributos privados usando métodos públicos
+mi_coche.cambiar_marca("Honda")
+mi_coche.cambiar_modelo("Civic")
+
+# Mostrar la información actualizada
+mi_coche.mostrar_informacion()  # Salida: Marca: Honda, Modelo: Civic
